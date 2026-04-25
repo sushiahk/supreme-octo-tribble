@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>ARK PVP雑学</title>
+
+<style>
+body {
+  background: black;
+  color: lime;
+  font-family: monospace;
+  text-align: center;
+}
+button {
+  padding: 10px;
+  margin: 20px;
+  font-size: 18px;
+  cursor: pointer;
+}
+</style>
+
+</head>
+<body>
+
+<h1>⚔️ ARK PVP 雑学ジェネレーター</h1>
+
+<button onclick="showFact()">雑学を出す</button>
+
+<p id="fact">ここに表示される</p>
+
+<script>
+const facts = [
+"高台拠点はロケランで終わる",
+"夜襲は成功率が段違い",
+"C4は壁を狙え",
+"石拠点は初心者の罠",
+"タレットは分散配置しろ",
+"アルゲンで戦うな",
+"毒ワイバーンは最強クラス",
+"拠点は隠せ",
+"ログアウト時間はバレる",
+"戦うより奪え"
+];
+
+function showFact() {
+  const r = Math.floor(Math.random() * facts.length);
+  document.getElementById("fact").innerText = facts[r];
+}
+</script>
+
+</body>
+</html>
