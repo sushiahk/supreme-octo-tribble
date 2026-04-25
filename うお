@@ -1,0 +1,17 @@
+export default {
+  async fetch(request) {
+    const url = new URL(request.url);
+    const target = url.searchParams.get("url");
+
+    if (!target) {
+      return new Response("URLが必要", { status: 400 });
+    }
+
+    try {
+      const res = await fetch(target);
+      return new Response(res.body, res);
+    } catch (e) {
+      return new Response("エラー", { status: 500 });
+    }
+  }
+};
